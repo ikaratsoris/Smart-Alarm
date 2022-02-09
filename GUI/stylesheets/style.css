@@ -1,0 +1,64 @@
+*{
+	margin:0px;
+    padding:0px;
+    font-family: 'Open Sans Condensed';
+}
+body{
+	position:relative;
+    width:100%;
+    height:100%;
+}
+#connected_text{
+	font-size: 25px;
+	font-weight: bold;
+}
+
+#status{
+	font-size: 25px;
+	font-weight: bold;
+}
+
+#status_text{
+	padding-left: 30px;
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.locked_container{
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.unlocked_container{
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.offline_container{
+	font-size: 25px;
+	font-weight: bold;
+}
+
+#offline{
+	padding-top: 2cm;
+}
+
+#keypad tr td {
+	text-align:center; 
+	border:1px solid #000000; 
+	font-size:30px; 
+	font-weight:bold; 
+	width:100px; 
+	height:80px; 
+	cursor:pointer; 
+	}
+#keypad tr td:hover {background-color:#999999; color:#FFFFFF;}
+
+.display {
+	width:315px; 
+	height: 50px;
+	text-align:center; 
+	margin:10px auto auto auto; 
+	font-size:30px; 
+	border:1px solid #999999;
+}

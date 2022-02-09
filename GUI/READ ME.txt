@@ -1,0 +1,51 @@
+Welcome to Smart Alarm v1.1 GUI
+
+To run this graphical user interface you need to do the following:
+
+1. Download wampserver from the official site: http://www.wampserver.com/
+
+2. Begin the installation
+	2.1 After accepting the license agreement, the installer provides you with usefull
+	information.Please read carefully and make sure you are up to date in the
+	redistributable packages VC9, VC10, VC11, VC13 and VC14.
+
+3. This application connects to a PostgreSQL database, which means that you need to
+download and install PostgreSQL: https://www.postgresql.org/download/
+
+4. After installation of PostgreSQL, you need to copy libpq.dll from
+wamp64\bin\php\phpX.X.X to wamp64\bin\apache\Apache2.2*\bin . And restart the Wampserver.
+
+5. Download phpPgAdmin from here: https://sourceforge.net/projects/phppgadmin/files/
+
+6. Extract phpPgAdmin-5.1.zip in C:\wamp64\apps So the path will be,
+C:\wamp\apps\phpPgAdmin-5.1
+
+7. Create a file called phppgadmin.conf in C:\wamp64\alias. And copy paste the following :
+
+Alias /phppgadmin "C:/wamp64/apps/phpPgAdmin-5.1/" 
+
+<Directory "C:/wamp64/apps/phpPgAdmin-5.1/">
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride all
+        Order Deny,Allow
+  Allow from all
+</Directory>
+
+8. Left Click on the Wampserver Tray icon. Navigate to PHP > PHP extension. Then enable:
+	a. php_pgsql
+	b. php_pdo_pgsql extension
+
+9. Open C:\wamp64\apps\phpPgAdmin-5.1\conf\config.inc.php
+	a. find $conf['servers'][0]['host'] = ''; change to $conf['servers'][0]['host'] ='localhost';
+	b.  find $conf['extra_login_security'] = true; change true to false
+
+10. Restart All service
+
+11. Go to http://localhost/phppgadmin/ and try to login
+
+12. Copy the entire folder "smartalarm" to: C:\wamp64\www
+
+13. Replace in all .php files the connection string, so that the application be able to connect to your own database
+(e.g.) change $conn_string = "host=localhost port=5432 dbname=postgres user=postgres password=1234" to $conn_string = "host=192.168.1.1 port=5432 dbname=postgres user=postgres password=5678"
+
+Now you are ready to use Smart Alarm v1.1 GUI
